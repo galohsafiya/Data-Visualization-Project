@@ -1,0 +1,9 @@
+column,missing_before_imputation,missing_after_imputation,invalid_values_set_to_missing,original_rows,cleaned_rows,aggregate_rows_removed,unique_countries,year_min,year_max
+gov_exp_pct_gdp,1179,0,0,5892,4694,1198,208,1999,2023
+lit_rate_adult_pct,3825,0,0,5892,4694,1198,208,1999,2023
+pri_comp_rate_pct,1434,0,0,5892,4694,1198,208,1999,2023
+pupil_teacher_primary,1938,0,0,5892,4694,1198,208,1999,2023
+pupil_teacher_secondary,2592,0,0,5892,4694,1198,208,1999,2023
+school_enrol_primary_pct,535,0,0,5892,4694,1198,208,1999,2023
+school_enrol_secondary_pct,1137,0,0,5892,4694,1198,208,1999,2023
+school_enrol_tertiary_pct,1472,0,0,5892,4694,1198,208,1999,2023
