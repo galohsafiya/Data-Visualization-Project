@@ -509,6 +509,87 @@
       font-weight: 700;
     }
 
+    /* Chart 3 */
+    .scatter-controls {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+      font-size: 0.88rem;
+    }
+    .scatter-controls label { color: #444; }
+    .scatter-controls select {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 0.88rem;
+      background: #fafafa;
+      cursor: pointer;
+    }
+    .scatter-controls select:hover { border-color: var(--primary); }
+    .scatter-controls input[type="checkbox"] { cursor: pointer; }
+    .scatter-svg { display: block; overflow: visible; }
+    .trend-line { pointer-events: none; }
+    .corr-label { font-weight: 600; }
+
+    /* Chart 4 */
+    .bar-controls {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+      font-size: 0.88rem;
+    }
+    .bar-controls label { color: #444; }
+    .bar-controls select {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 0.88rem;
+      background: #fafafa;
+      cursor: pointer;
+    }
+    .bar-controls select:hover { border-color: var(--primary); }
+    .bar-svg { display: block; overflow: visible; }
+    .bar-label { pointer-events: none; }
+
+    #chart3 .chart-title,
+    #chart4 .chart-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+    #chart3 .chart-subtitle,
+    #chart4 .chart-subtitle {
+      font-size: 0.83rem;
+      color: var(--text-soft);
+      margin-bottom: 12px;
+      line-height: 1.45;
+    }
+    .svg-chart-label {
+      font-size: 14px;
+      font-weight: 700;
+      fill: var(--primary-dark);
+    }
+    .legend-label { font-size: 12px; fill: #405264; }
+
+    .chart-tooltip {
+      position: absolute;
+      background: rgba(20, 20, 40, 0.9);
+      color: #fff;
+      padding: 9px 13px;
+      border-radius: 10px;
+      font-size: 13px;
+      line-height: 1.6;
+      pointer-events: none;
+      transition: opacity 0.15s;
+      white-space: nowrap;
+      z-index: 9999;
+    }
+
     @media (max-width: 1100px) {
       .filter-panel,
       .kpi-row,
@@ -798,11 +879,20 @@
   <!-- Example:
   <script src="chart1.js"></script>
   <script src="chart2.js"></script>
-  <script src="chart3.js"></script>
-  <script src="chart4.js"></script>
   -->
 
+  <script src="chart3.js"></script>
+  <script src="chart4.js"></script>
   <script src="chart6.js"></script>
   <script src="chart5.js"></script>
+
+  <script>
+    d3.csv("cleaned_world_education_dataset.csv").then(function (data) {
+      window.initScatterPlot(data);
+      window.initBarChart(data);
+    }).catch(function (err) {
+      console.warn("Could not load CSV for chart3/chart4:", err.message);
+    });
+  </script>
 </body>
 </html>
